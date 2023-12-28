@@ -11,8 +11,8 @@ split_line = \n-----------------------------------------------------------------
 
 # Compiler and Execute ans Scripts
 print_cCraft = bash Scripts/print_cCraft.sh &&
-gcc_function = gcc -Wall -Wextra -Werror 2>/dev/null ../Tests/Functions/fcc_
-gcc_program = gcc -Wall -Wextra -Werror 2>/dev/null ../Tests/Functions/pcc_
+gcc_function = gcc -Wall -Wextra -Werror ../Tests/Functions/fcc_
+gcc_program = gcc -Wall -Wextra -Werror ../Tests/Functions/pcc_
 execute = -o fcc && ./fcc && rm -f fcc || \
 echo "$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
 
