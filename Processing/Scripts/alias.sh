@@ -58,7 +58,7 @@ $ansi_red(Replace nameex and namequ with the name of the exercises/quizzes)$ansi
 "$ansi_blue"ccraft up$ansi_default: The ccraft up command to update the program as any changes or additions are released.
 "$ansi_blue"ccraft wnew$ansi_default: The ccraft wnew command to find out what are the latest modifications and additions that occurred in the program.
 "$ansi_blue"ccraft del$ansi_default: The ccraft del command to deleted the program from your device.
-\n\n"$ansi_yellow"If you encounter any problem or encounter any errors in a program or have a suggestion to improve a program, you can contact us through our accounts available on GitHub: "$ansi_line"https://github.com/codingcraft-cc$ansi_default"
+\n\n"$ansi_yellow"If you encounter any problem or encounter any errors in a program or have a suggestion to improve a program, you can contact us through our accounts available on GitHub: "$ansi_line"https://github.com/mr-youbella$ansi_default"
 }
 
 
