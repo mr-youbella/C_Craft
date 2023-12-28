@@ -34,7 +34,7 @@ while [ $i -lt 14 ]; do
     if [ -e ../../ft_${name_exercises[$i]}.c ]; then 
         echo; echo -e ""$ansi_blue$ansi_bold$ansi_line"Testing ${name_exercises[$i]}$ansi_default"; echo
         echo -ne $ansi_yellow ; loading 10 ; echo -ne $ansi_default ; echo
-        gcc -Wall -Wextra -Werror 2>/dev/null $(dirname "$0")/../../Tests/Functions/fcc_${name_exercises[$i]}.c -o fcc && \
+        gcc -Wall -Wextra -Werror $(dirname "$0")/../../Tests/Functions/fcc_${name_exercises[$i]}.c -o fcc && \
         ./fcc && \
         rm fcc || \
         echo -e ""$ansi_red"There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.$ansi_default"
