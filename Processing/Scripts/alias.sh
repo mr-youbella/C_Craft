@@ -69,7 +69,7 @@ if [ -z $1 ]; then
     exit
 fi
 
-cp -r 2>/dev/null ~/C_Craft C_Craft
+cp -r ~/C_Craft C_Craft 2>/dev/null
 ## Switch case
 case $1 in
 # Display last Update
@@ -190,4 +190,4 @@ case $1 in
     ;;
 esac
 
-rm -rf C_Craft
+rm -rf C_Craft 2>/dev/null
