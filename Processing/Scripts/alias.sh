@@ -12,11 +12,17 @@ what_is_new(){
 }
 deleted()
 {
-    rm -rf ~/C_Craft
-    sed -i "s/alias ccraft='bash ~\/C_Craft\/Processing\/Scripts\/alias.sh'//" ~/.bashrc ~/.zshrc 2>/dev/null
-    clear
-    echo -e "\033[32mUpdate successfully, Bye \033[34m$(whoami)\033[0m."
-    exec bash
+    echo -e "\033[31mAre you sure you want to delete the C Craft program from you device!? (y = yes / n = no)\033[0m"
+    read yesno
+    if [ "$yesno" == 'y' ]; then
+        rm -rf ~/C_Craft
+        sed -i "s/alias ccraft='bash ~\/C_Craft\/Processing\/Scripts\/alias.sh'//" ~/.bashrc ~/.zshrc 2>/dev/null
+        clear
+        echo -e "\033[31mDeleted successfully, Bye \033[34m$(whoami)\033[0m."
+        exec bash
+    else 
+        echo -e "\033[32mit is still a program on the device\033[0m"
+    fi
 }
 update()
 {
