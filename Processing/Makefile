@@ -17,7 +17,7 @@ execute = -o fcc && ./fcc && rm -f fcc || \
 echo "$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
 
 # Name Exercises/Quizzes
-names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter$(ansi_default)" 
+names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter -$(ansi_green) factorial - strcmp - char_count - no_space - calc - str_rev$(ansi_default)" 
 names_quizzes_Availble = "$(ansi_blue)quiz1$(ansi_default)"
 
 # Subject
@@ -268,6 +268,101 @@ test_index_letter:
 		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_index_letter.c$(ansi_default)"; \
 	fi
 
+# Factorial
+subject_factorial:
+	@echo "\
+$(name_exercise) Factorial\n\n\
+$(name_file) ft_factorial.c\n\n\
+$(subject) Create an function that returns a number. This number is the result of a factorial operation based on the number given as a parameter.\nIf the argument is not valid the function should return 0. (like negative numbers...)\n\n\
+$(prototype) \n'''\nint ft_factorial(int nb);\n'''\n\n\
+$(allowed_function) None."
+test_factorial:
+	@if [ -e ../../ft_factorial.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)factorial$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)factorial.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_factorial.c$(ansi_default)"; \
+	fi
+
+# Strcmp
+subject_strcmp:
+	@echo "\
+$(name_exercise) Strcmp\n\n\
+$(name_file) ft_strcmp.c\n\n\
+$(subject) Reproduce the behavior of the function strcmp.\n\n\
+$(prototype) \n'''\nint ft_strcmp(char *s1, char *s2);\n'''\n\n\
+$(allowed_function) None."
+test_strcmp:
+	@if [ -e ../../ft_strcmp.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)strcmp$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)strcmp.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_strcmp.c$(ansi_default)"; \
+	fi
+
+# Character Count
+subject_char_count:
+	@echo "\
+$(name_exercise) Character Count\n\n\
+$(name_file) ft_char_count.c\n\n\
+$(subject) Create a function that takes a string and a character and returns the number of occurrences of a character that it finds within the string.\nExample: ft_char_count(\"Hello World\", 'l') // 3\n\n\
+$(prototype) \n'''\nint ft_char_count(char *str, char c);\n'''\n\n\
+$(allowed_function) None."
+test_char_count:
+	@if [ -e ../../ft_char_count.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)char_count$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)char_count.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_char_count.c$(ansi_default)"; \
+	fi
+
+# No Space
+subject_no_space:
+	@echo "\
+$(name_exercise) No Space\n\n\
+$(name_file) ft_no_space.c\n\n\
+$(subject) Write a function that removes the spaces from the string, then return the resultant string.\n\n\
+$(prototype) \n'''\nchar *no_space(const char *str);\n'''\n\n\
+$(allowed_function) malloc."
+test_no_space:
+	@if [ -e ../../ft_no_space.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)no_space$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)no_space.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_no_space.c$(ansi_default)"; \
+	fi
+
+# Calculator
+subject_calc:
+	@echo "\
+$(name_exercise) Calculator\n\n\
+$(name_file) ft_calc.c\n\n\
+$(subject) Write a function that takes three strings. The first and third are representations of integers. The second operator is an arithmetic operator chosen from: (+ - * / %). The function must return the result of the required arithmetic operation.\nExample: calc(\"13\", '+', \"37\")\\ 50\n\n\
+$(prototype) \n'''\nint calc(char *nb1, char op, char *nb2);\n'''\n\n\
+$(allowed_function) None."
+test_calc:
+	@if [ -e ../../ft_calc.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)calc$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)calc.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_calc.c$(ansi_default)"; \
+	fi
+
+# Str Reverse
+subject_str_rev:
+	@echo "\
+$(name_exercise) Str Reverse\n\n\
+$(name_file) ft_str_rev.c\n\n\
+$(subject) Write a function that takes a string and returns its reverse\n\n\
+$(prototype) \n'''\nchar *ft_str_rev(const char *str);\n'''\n\n\
+$(allowed_function) malloc."
+test_str_rev:
+	@if [ -e ../../ft_str_rev.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)str_rev$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)str_rev.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_str_rev.c$(ansi_default)"; \
+	fi
 # End Exercises
 
 ## End Targets

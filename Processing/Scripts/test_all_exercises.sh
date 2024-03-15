@@ -1,7 +1,7 @@
 #!/bin/bash
 source $(dirname "$0")/ansi.sh
 
-name_exercises=(sum digit strlen saverge even power str_is_alpha str_is_numbers bindec upper_case lower_case atoi value_ascii index_letter) #14 Exercises
+name_exercises=(sum digit strlen saverge even power str_is_alpha str_is_numbers bindec upper_case lower_case atoi value_ascii index_letter factorial strcmp char_count no_space calc str_rev) #20 Exercises
 spin=("⠁" "⠃" "⠇" "⠧" "⠷" "⠿" "⠧" "⠇" "⠃")
 i=0
 check_ex=0
@@ -30,7 +30,7 @@ echo -e "                        ╚══════════════�
 
 loading 20
 
-while [ $i -lt 14 ]; do
+while [ $i -lt 20 ]; do
     if [ -e ../../ft_${name_exercises[$i]}.c ]; then 
         echo; echo -e ""$ansi_blue$ansi_bold$ansi_line"Testing ${name_exercises[$i]}$ansi_default"; echo
         echo -ne $ansi_yellow ; loading 10 ; echo -ne $ansi_default ; echo

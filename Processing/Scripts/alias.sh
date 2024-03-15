@@ -5,10 +5,11 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
-    echo -e "1 - Adding the "$ansi_blue"ccraft up$ansi_default command to update the program as any changes or additions are released."
-    echo -e "2 - Adding the "$ansi_blue"ccraft wnew$ansi_default command to find out what are the latest modifications and additions that occurred in the program."
+    echo -e "1 - Added 6 new exercises" 
     echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
-    echo -e "Add program"
+    echo -e "1 - Adding the "$ansi_blue"ccraft up$ansi_default command to update the program as any changes or additions are released." 
+    echo -e "2 - Adding the "$ansi_blue"ccraft wnew$ansi_default command to find out what are the latest modifications and additions that occurred in the program."    
+
 }
 deleted()
 {
@@ -144,6 +145,24 @@ case $1 in
     "index_letter")
         (cd C_Craft/Processing && make test_index_letter)
     ;;
+    "factorial")
+        (cd C_Craft/Processing && make test_factorial)
+    ;;
+    "strcmp")
+        (cd C_Craft/Processing && make test_strcmp)
+    ;;
+    "char_count")
+        (cd C_Craft/Processing && make test_char_count)
+    ;;
+    "no_space")
+        (cd C_Craft/Processing && make test_no_space)
+    ;;
+    "calc")
+        (cd C_Craft/Processing && make test_calc)
+    ;;
+    "str_rev")
+        (cd C_Craft/Processing && make test_str_rev)
+    ;;
 # Test All Exercises
     "testall")
         (cd C_Craft/Processing && make test_all_exercises)
@@ -190,6 +209,24 @@ case $1 in
     ;;
     "su_index_letter")
         (cd $(dirname "$0")/.. && make subject_index_letter)
+    ;;
+    "su_factorial")
+        (cd $(dirname "$0")/.. && make subject_factorial)
+    ;;
+    "su_strcmp")
+        (cd $(dirname "$0")/.. && make subject_strcmp)
+    ;;
+    "su_char_count")
+        (cd $(dirname "$0")/.. && make subject_char_count)
+    ;;
+    "su_no_space")
+        (cd $(dirname "$0")/.. && make subject_no_space)
+    ;;
+    "su_calc")
+        (cd $(dirname "$0")/.. && make subject_calc)
+    ;;
+    "su_str_rev")
+        (cd $(dirname "$0")/.. && make subject_str_rev)
     ;;
     *)
         echo -e ""$ansi_red"C_Craft: command not found$ansi_default"
