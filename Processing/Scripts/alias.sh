@@ -5,10 +5,9 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
-    echo -e "1 - Added 6 new exercises" 
+    echo -e "1 - Fix the problem of deleting a program while using the ~ path " 
     echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
-    echo -e "1 - Adding the "$ansi_blue"ccraft up$ansi_default command to update the program as any changes or additions are released." 
-    echo -e "2 - Adding the "$ansi_blue"ccraft wnew$ansi_default command to find out what are the latest modifications and additions that occurred in the program."    
+    echo -e "1 - Added 6 new exercises" 
 
 }
 deleted()
@@ -76,7 +75,9 @@ if [ -z $1 ]; then
     exit
 fi
 
-cp -r ~/C_Craft C_Craft 2>/dev/null
+if [ ! -e ~ ]; then
+    cp -r ~/C_Craft C_Craft 2>/dev/null
+fi
 ## Switch case
 case $1 in
 # Display last Update
@@ -233,4 +234,6 @@ case $1 in
     ;;
 esac
 
-rm -rf C_Craft 2>/dev/null
+if [ ! -e ~ ]; then
+    rm -rf C_Craft 2>/dev/null
+fi
