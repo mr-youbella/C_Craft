@@ -17,7 +17,7 @@ execute = -o fcc && ./fcc && rm -f fcc || \
 echo "$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
 
 # Name Exercises/Quizzes
-names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter -$(ansi_green) factorial - strcmp - char_count - no_space - calc - str_rev$(ansi_default)" 
+names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev$(ansi_green)\nstrcapitalize$(ansi_default)" 
 names_quizzes_Availble = "$(ansi_blue)quiz1$(ansi_default)"
 
 # Subject
@@ -322,7 +322,7 @@ subject_no_space:
 $(name_exercise) No Space\n\n\
 $(name_file) ft_no_space.c\n\n\
 $(subject) Write a function that removes the spaces from the string, then return the resultant string.\n\n\
-$(prototype) \n'''\nchar *no_space(const char *str);\n'''\n\n\
+$(prototype) \n'''\nchar *ft_no_space(const char *str);\n'''\n\n\
 $(allowed_function) malloc."
 test_no_space:
 	@if [ -e ../../ft_no_space.c ]; then \
@@ -338,7 +338,7 @@ subject_calc:
 $(name_exercise) Calculator\n\n\
 $(name_file) ft_calc.c\n\n\
 $(subject) Write a function that takes three strings. The first and third are representations of integers. The second operator is an arithmetic operator chosen from: (+ - * / %). The function must return the result of the required arithmetic operation.\nExample: calc(\"13\", '+', \"37\")\\ 50\n\n\
-$(prototype) \n'''\nint calc(char *nb1, char op, char *nb2);\n'''\n\n\
+$(prototype) \n'''\nint ft_calc(char *nb1, char op, char *nb2);\n'''\n\n\
 $(allowed_function) None."
 test_calc:
 	@if [ -e ../../ft_calc.c ]; then \
@@ -362,6 +362,22 @@ test_str_rev:
 		$(print_cCraft) $(gcc_function)str_rev.c $(execute); \
 	else \
 		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_str_rev.c$(ansi_default)"; \
+	fi
+
+# Strcapitalize
+subject_strcapitalize:
+	@echo "\
+$(name_exercise) Strcapitalize\n\n\
+$(name_file) ft_strcapitalize.c\n\n\
+$(subject) Create a function that capitalizes the first letter of each word and transforms all other letters to lowercase.\nExample: hello, how are you ? 42words forty-two; 13You,bella -> Hello, How Are You ? 42words Forty-Two; 13you,Bella\n\n\
+$(prototype) \n'''\nchar *ft_strcapitalize(char *str);\n'''\n\n\
+$(allowed_function) None."
+test_strcapitalize:
+	@if [ -e ../../ft_strcapitalize.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)strcapitalize$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)strcapitalize.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_strcapitalize.c$(ansi_default)"; \
 	fi
 # End Exercises
 

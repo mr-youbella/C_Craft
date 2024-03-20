@@ -5,7 +5,8 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
-    echo -e "1 - Fix the problem of deleting a program while using the ~ path " 
+    echo -e "1 - Fix errors" 
+    echo -e "2 - Add an exercise" 
     echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
     echo -e "1 - Added 6 new exercises" 
 
@@ -165,6 +166,9 @@ case $1 in
     "str_rev")
         (cd C_Craft/Processing && make test_str_rev)
     ;;
+    "strcapitalize")
+        (cd C_Craft/Processing && make test_strcapitalize)
+    ;;
 # Test All Exercises
     "testall")
         (cd C_Craft/Processing && make test_all_exercises)
@@ -229,6 +233,9 @@ case $1 in
     ;;
     "su_str_rev")
         (cd $(dirname "$0")/.. && make subject_str_rev)
+    ;;
+    "su_strcapitalize")
+        (cd $(dirname "$0")/.. && make subject_strcapitalize)
     ;;
     *)
         echo -e ""$ansi_red"C_Craft: command not found$ansi_default"
