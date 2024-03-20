@@ -75,9 +75,10 @@ if [ -z $1 ]; then
     exit
 fi
 
-if [ ! -e ~ ]; then
+if [ "$(pwd)" != "$HOME" ]; then
     cp -r ~/C_Craft C_Craft 2>/dev/null
 fi
+
 ## Switch case
 case $1 in
 # Display last Update
@@ -234,6 +235,6 @@ case $1 in
     ;;
 esac
 
-if [ ! -e ~ ]; then
+if [ "$(pwd)" != "$HOME" ]; then
     rm -rf C_Craft 2>/dev/null
 fi
