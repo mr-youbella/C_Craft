@@ -4,10 +4,10 @@
 int	main(void)
 {
     int i = 0;	
-    char ts[][20] = {"Hello World!", "13Youbella50", "120", "-1598", "0", "", "   -++-+-1325abcd", "   +254C"};
-    int ts2[] = {0, 13, 120, -1598, 0, 0, 0, 254};
+    char ts[][20] = {"Hello World!", "13Youbella50", "120", "-1598", "0", "", "   -++-+-1325abcd", "   +254C", "\t\r1337", "\f\v7331"};
+    int ts2[] = {0, 13, 120, -1598, 0, 0, 0, 254, 1337, 7331};
 
-    while (i < 8)
+    while (i < 10)
     {
         usleep(200000);
         if (ft_atoi(ts[i]) == ts2[i])

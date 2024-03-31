@@ -17,7 +17,7 @@ execute = -o fcc && ./fcc && rm -f fcc || \
 echo "$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
 
 # Name Exercises/Quizzes
-names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev$(ansi_green)\nstrcapitalize$(ansi_default)" 
+names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize$(ansi_green) - fibonacci - strstr$(ansi_default)" 
 names_quizzes_Availble = "$(ansi_blue)quiz1$(ansi_default)"
 
 # Subject
@@ -378,6 +378,38 @@ test_strcapitalize:
 		$(print_cCraft) $(gcc_function)strcapitalize.c $(execute); \
 	else \
 		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_strcapitalize.c$(ansi_default)"; \
+	fi
+
+# Fibonacci
+subject_fibonacci:
+	@echo "\
+$(name_exercise) fibonacci\n\n\
+$(name_file) ft_fibonacci.c\n\n\
+$(subject) Create a function ft_fibonacci that returns the n-th element of the Fibonacci sequence, the first element being at the 0 index. We'll consider that the Fibonacci sequence starts like this: 0, 1, 1, 2....(•If the index is less than 0, the function should return -1.)\nExample: ft_fibonacci(7); \\ 13\n\n\
+$(prototype) \n'''\nint ft_fibonacci(int index);\n'''\n\n\
+$(allowed_function) None."
+test_fibonacci:
+	@if [ -e ../../ft_fibonacci.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)fibonacci$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)fibonacci.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_fibonacci.c$(ansi_default)"; \
+	fi
+
+# StrStr
+subject_strstr:
+	@echo "\
+$(name_exercise) StrStr\n\n\
+$(name_file) ft_strstr.c\n\n\
+$(subject) Reproduce the behavior of the function strstr.\n\n\
+$(prototype) \n'''\nchar *ft_strstr(char *str, char *to_find);\n'''\n\n\
+$(allowed_function) None."
+test_strstr:
+	@if [ -e ../../ft_strstr.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)strstr$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)strstr.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_strstr.c$(ansi_default)"; \
 	fi
 # End Exercises
 

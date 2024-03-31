@@ -1,6 +1,7 @@
 #!/bin/shell
 (cd ~ && git clone https://github.com/mr-youbella/C_Craft)
-sudo apt-get install whiptail || sudo yum install newt || sudo dnf install newt || brew install newt
+sudo apt-get install whiptail || sudo yum install newt || sudo dnf install newt || brew install newt || pkg install whiptail
+sudo apt-get install make || sudo yum install make || sudo dnf install make || pkg install make
 echo >> ~/.bashrc; echo "alias ccraft='bash ~/C_Craft/Processing/Scripts/alias.sh'" >> ~/.bashrc
 echo >> ~/.zshrc; echo "alias ccraft='bash ~/C_Craft/Processing/Scripts/alias.sh'" >> ~/.zshrc
 source ~/.bashrc

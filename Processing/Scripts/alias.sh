@@ -5,10 +5,11 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
+    echo -e "1 - Add 2 exercises (fibonacci & strstr)" 
+    echo -e "2 - Add tests in exercise atoi"
+    echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
     echo -e "1 - Fix errors" 
     echo -e "2 - Add an exercise" 
-    echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
-    echo -e "1 - Added 6 new exercises" 
 
 }
 deleted()
@@ -169,6 +170,12 @@ case $1 in
     "strcapitalize")
         (cd C_Craft/Processing && make test_strcapitalize)
     ;;
+    "fibonacci")
+        (cd C_Craft/Processing && make test_fibonacci)
+    ;;
+    "strstr")
+        (cd C_Craft/Processing && make test_strstr)
+    ;;
 # Test All Exercises
     "testall")
         (cd C_Craft/Processing && make test_all_exercises)
@@ -236,6 +243,12 @@ case $1 in
     ;;
     "su_strcapitalize")
         (cd $(dirname "$0")/.. && make subject_strcapitalize)
+    ;;
+    "su_fibonacci")
+        (cd $(dirname "$0")/.. && make subject_fibonacci)
+    ;;
+    "su_strstr")
+        (cd $(dirname "$0")/.. && make subject_strstr)
     ;;
     *)
         echo -e ""$ansi_red"C_Craft: command not found$ansi_default"
