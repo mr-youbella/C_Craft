@@ -4,6 +4,7 @@
 ansi_red = \033[31m
 ansi_green = \033[32m
 ansi_blue = \033[34m
+ansi_pink = \033[35m
 ansi_bold = \033[1m
 ansi_line = \033[4m
 ansi_default = \033[0m
@@ -17,7 +18,7 @@ execute = -o fcc && ./fcc && rm -f fcc || \
 echo "$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
 
 # Name Exercises/Quizzes
-names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize - fibonacci - strstr - $(ansi_green)itoa - strchr - check_email $(ansi_default)" 
+names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize - fibonacci - strstr - $(ansi_green)itoa - strchr - check_email \n$(ansi_pink)-> 26 Exercises <-$(ansi_default)" 
 names_quizzes_Availble = "$(ansi_blue)quiz1$(ansi_default)"
 
 # Subject
