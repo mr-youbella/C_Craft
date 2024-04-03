@@ -5,11 +5,11 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
+    echo -e "1 - Add 2 exercises (strchr & check_email)" 
+    echo -e "2 - Add tests in exercise strstr"
+    echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
     echo -e "1 - Add 2 exercises (fibonacci & strstr)" 
     echo -e "2 - Add tests in exercise atoi"
-    echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
-    echo -e "1 - Fix errors" 
-    echo -e "2 - Add an exercise" 
 
 }
 deleted()
@@ -176,6 +176,15 @@ case $1 in
     "strstr")
         (cd C_Craft/Processing && make test_strstr)
     ;;
+    "itoa")
+        (cd C_Craft/Processing && make test_itoa)
+    ;;
+    "check_email")
+        (cd C_Craft/Processing && make test_check_email)
+    ;;
+    "strchr")
+        (cd C_Craft/Processing && make test_strchr)
+    ;;
 # Test All Exercises
     "testall")
         (cd C_Craft/Processing && make test_all_exercises)
@@ -249,6 +258,15 @@ case $1 in
     ;;
     "su_strstr")
         (cd $(dirname "$0")/.. && make subject_strstr)
+    ;;
+    "su_itoa")
+        (cd $(dirname "$0")/.. && make subject_itoa)
+    ;;
+    "su_check_email")
+        (cd $(dirname "$0")/.. && make subject_check_email)
+    ;;
+    "su_strchr")
+        (cd $(dirname "$0")/.. && make subject_strchr)
     ;;
     *)
         echo -e ""$ansi_red"C_Craft: command not found$ansi_default"

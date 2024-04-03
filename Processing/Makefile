@@ -17,7 +17,7 @@ execute = -o fcc && ./fcc && rm -f fcc || \
 echo "$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
 
 # Name Exercises/Quizzes
-names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize$(ansi_green) - fibonacci - strstr$(ansi_default)" 
+names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize - fibonacci - strstr - $(ansi_green)itoa - strchr - check_email $(ansi_default)" 
 names_quizzes_Availble = "$(ansi_blue)quiz1$(ansi_default)"
 
 # Subject
@@ -410,6 +410,54 @@ test_strstr:
 		$(print_cCraft) $(gcc_function)strstr.c $(execute); \
 	else \
 		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_strstr.c$(ansi_default)"; \
+	fi
+
+# Itoa
+subject_itoa:
+	@echo "\
+$(name_exercise) Itoa\n\n\
+$(name_file) ft_itoa.c\n\n\
+$(subject) Reproduce the behavior of the function itoa.\n\n\
+$(prototype) \n'''\nchar *ft_itoa(int num);\n'''\n\n\
+$(allowed_function) malloc."
+test_itoa:
+	@if [ -e ../../ft_itoa.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)itoa$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)itoa.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_itoa.c$(ansi_default)"; \
+	fi
+
+# StrChr
+subject_strchr:
+	@echo "\
+$(name_exercise) StrChr\n\n\
+$(name_file) ft_strchr.c\n\n\
+$(subject) Reproduce the behavior of the function strchr.\n\n\
+$(prototype) \n'''\nchar *ft_strchr(const char *s, int c)\n'''\n\n\
+$(allowed_function) None."
+test_strchr:
+	@if [ -e ../../ft_strchr.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)strchr$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)strchr.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_strchr.c$(ansi_default)"; \
+	fi
+
+# Check Email
+subject_check_email:
+	@echo "\
+$(name_exercise) Check Email\n\n\
+$(name_file) ft_check_email.c\n\n\
+$(subject) Create a function that returns 1 if the email contains a domain name (@ccraft.com) and is at least 4 letters in the user name and it must not contain spaces. If these conditions are not met, the function must return 0.\nExample: ft_check_email("youbella@ccraft.com"); \\ 1\n\n\
+$(prototype) \n'''\nint ft_check_email(const char *email);\n'''\n\n\
+$(allowed_function) None."
+test_check_email:
+	@if [ -e ../../ft_check_email.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)check_email$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)check_email.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_check_email.c$(ansi_default)"; \
 	fi
 # End Exercises
 
