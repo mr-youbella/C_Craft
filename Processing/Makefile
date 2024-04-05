@@ -18,7 +18,7 @@ execute = -o fcc && ./fcc && rm -f fcc || \
 echo "$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
 
 # Name Exercises/Quizzes
-names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize - fibonacci - strstr - $(ansi_green)itoa - strchr - check_email \n$(ansi_pink)-> 26 Exercises <-$(ansi_default)" 
+names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize - fibonacci - strstr - itoa - strchr - check_email - $(ansi_green)max_num - min_num\n$(ansi_pink)-> 28 Exercises <-$(ansi_default)" 
 names_quizzes_Availble = "$(ansi_blue)quiz1$(ansi_default)"
 
 # Subject
@@ -459,6 +459,38 @@ test_check_email:
 		$(print_cCraft) $(gcc_function)check_email.c $(execute); \
 	else \
 		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_check_email.c$(ansi_default)"; \
+	fi
+
+# Max number
+subject_max_num:
+	@echo "\
+$(name_exercise) Max number\n\n\
+$(name_file) ft_max_num.c\n\n\
+$(subject) The first parameter is an array of int, the second is the number of elements in the array. - The function returns the largest number found in the array. (If the array is empty, the function returns 0)\n\n\
+$(prototype) \n'''\nint ft_max_num(int* arr, unsigned int len);\n'''\n\n\
+$(allowed_function) None."
+test_max_num:
+	@if [ -e ../../ft_max_num.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)max_num$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)max_num.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_max_num.c$(ansi_default)"; \
+	fi
+
+# Min number
+subject_min_num:
+	@echo "\
+$(name_exercise) Min number\n\n\
+$(name_file) ft_min_num.c\n\n\
+$(subject) The first parameter is an array of int, the second is the number of elements in the array. - The function returns the less number found in the array. (If the array is empty, the function returns 0)\n\n\
+$(prototype) \n'''\nint ft_min_num(int* arr, unsigned int len);\n'''\n\n\
+$(allowed_function) None."
+test_min_num:
+	@if [ -e ../../ft_min_num.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)min_num$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)min_num.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_min_num.c$(ansi_default)"; \
 	fi
 # End Exercises
 

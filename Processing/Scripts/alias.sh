@@ -5,11 +5,10 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
+    echo -e "1 - Add 2 exercises (max_num - min_num)"
+    echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
     echo -e "1 - Add 3 exercises (itoa & strchr & check_email)" 
     echo -e "2 - Add tests in exercise strstr"
-    echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
-    echo -e "1 - Add 2 exercises (fibonacci & strstr)" 
-    echo -e "2 - Add tests in exercise atoi"
 
 }
 deleted()
@@ -185,6 +184,12 @@ case $1 in
     "strchr")
         (cd C_Craft/Processing && make test_strchr)
     ;;
+    "max_num")
+        (cd C_Craft/Processing && make test_max_num)
+    ;;
+    "min_num")
+        (cd C_Craft/Processing && make test_min_num)
+    ;;
 # Test All Exercises
     "testall")
         (cd C_Craft/Processing && make test_all_exercises)
@@ -267,6 +272,12 @@ case $1 in
     ;;
     "su_strchr")
         (cd $(dirname "$0")/.. && make subject_strchr)
+    ;;
+    "su_max_num")
+        (cd $(dirname "$0")/.. && make subject_max_num)
+    ;;
+    "su_min_num")
+        (cd $(dirname "$0")/.. && make subject_min_num)
     ;;
     *)
         echo -e ""$ansi_red"C_Craft: command not found$ansi_default"
