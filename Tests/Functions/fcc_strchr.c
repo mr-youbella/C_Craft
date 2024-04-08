@@ -11,7 +11,9 @@ int	main(void)
     while (i < 8)
     {
         usleep(200000);
-        if (strcmp(ft_strchr(str[i], c[i]), result[i]) == 0)
+        if (ft_strchr(str[i], c[i]) == NULL)
+            printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\", \'%c\')\nExpected: \"%s\"\nbut got: NULL\n---------------------\n" ansi_default, i + 1, str[i], c[i], result[i]);
+        else if (strcmp(ft_strchr(str[i], c[i]), result[i]) == 0)
             printf(split_line_passed, i + 1);
         else 
             printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\", \'%c\')\nExpected: \"%s\"\nbut got: \"%s\"\n---------------------\n" ansi_default, i + 1, str[i], c[i], result[i], ft_strchr(str[i], c[i]));
