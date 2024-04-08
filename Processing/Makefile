@@ -18,7 +18,7 @@ execute = -o fcc && ./fcc && rm -f fcc || \
 echo "$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
 
 # Name Exercises/Quizzes
-names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize - fibonacci - strstr - itoa - strchr - check_email - max_num - min_num - $(ansi_green)rev_int_arr - sort_int_arr\n$(ansi_pink)-> 28 Exercises <-$(ansi_default)" 
+names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bindec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize - fibonacci - strstr - itoa - strchr - check_email - max_num - min_num - $(ansi_green)rev_int_arr - sort_int_arr\n$(ansi_pink)-> 30 Exercises <-$(ansi_default)" 
 names_quizzes_Availble = "$(ansi_blue)quiz1$(ansi_default)"
 
 # Subject
