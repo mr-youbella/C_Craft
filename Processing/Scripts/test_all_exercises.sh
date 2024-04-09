@@ -1,7 +1,7 @@
 #!/bin/bash
 source $(dirname "$0")/ansi.sh
 
-name_exercises=(sum digit strlen saverge even power str_is_alpha str_is_numbers bindec upper_case lower_case atoi value_ascii index_letter \
+name_exercises=(sum digit strlen saverge even power str_is_alpha str_is_numbers bintdec upper_case lower_case atoi value_ascii index_letter \
  factorial strcmp char_count no_space calc str_rev strcapitalize fibonacci strstr itoa strchr check_email max_num min_num rev_int_arr sort_int_arr) #30 Exercises
 spin=("⠷" "⠃" "⠇" "⠧" "⠷" "⠿" "⠧" "⠇" "⠃")
 i=0

@@ -5,10 +5,11 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
+    echo -e "1 - Add tests in calc"
+    echo -e "2 - Edit the name of an exercise (bindec -> bintdec)"
+    echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
     echo -e "1 - Add 2 exercises (rev_int_arr - sort_int_arr)"
     echo -e "2 - Fix and Add tests in strstr & strchr"
-    echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
-    echo -e "1 - Add 2 exercises (max_arr - min_arr)" 
 
 }
 deleted()
