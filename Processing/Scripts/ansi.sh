@@ -3,6 +3,7 @@
 ansi_light_blue="\033[94m"
 ansi_pink="\033[95m"
 ansi_red="\033[31m"
+ansi_sred="\033[1;38;5;197m"
 ansi_green="\033[32m"
 ansi_blue="\033[34m"
 ansi_yellow="\033[93m"

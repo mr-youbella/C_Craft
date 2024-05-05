@@ -2,6 +2,7 @@
 
 # ANSI Code and lines
 ansi_red = \033[31m
+ansi_sred = \033[1;38;5;197m
 ansi_green = \033[32m
 ansi_blue = \033[34m
 ansi_pink = \033[35m
@@ -15,10 +16,10 @@ print_cCraft = bash Scripts/print_cCraft.sh &&
 gcc_function = gcc -Wall -Wextra -Werror ../Tests/Functions/fcc_
 gcc_program = gcc -Wall -Wextra -Werror ../Tests/Functions/pcc_
 execute = -o fcc && ./fcc && rm -f fcc || \
-echo "$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
+echo "$(ansi_sred)\nCANNOT COMPILER.$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
 
 # Name Exercises/Quizzes
-names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bintdec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize - fibonacci - strstr - itoa - strchr - check_email - max_num - min_num - $(ansi_green)rev_int_arr - sort_int_arr\n$(ansi_pink)-> 30 Exercises <-$(ansi_default)" 
+names_exercises_Availble = "$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bintdec - upper_case\nlower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count - no_space - calc - str_rev\nstrcapitalize - fibonacci - strstr - itoa - strchr - check_email - max_num - min_num - rev_int_arr - sort_int_arr\n$(ansi_green)swap_bits\n$(ansi_pink)-> 31 Exercises <-$(ansi_default)" 
 names_quizzes_Availble = "$(ansi_blue)quiz1$(ansi_default)"
 
 # Subject
@@ -83,7 +84,7 @@ subject_strlen:
 $(name_exercise) Strlen\n\n\
 $(name_file) ft_strlen.c\n\n\
 $(subject) Reproduce the behavior of the function strlen.\n\n\
-$(prototype) \n'''\nint ft_strlen(char *str);\n'''\n\n\
+$(prototype) \n'''\nint ft_strlen(const char *str);\n'''\n\n\
 $(allowed_function) None."
 test_strlen:
 	@if [ -e ../../ft_strlen.c ]; then \
@@ -258,7 +259,7 @@ subject_index_letter:
 	@echo "\
 $(name_exercise) Index Letter\n\n\
 $(name_file) ft_index_letter.c\n\n\
-$(subject) Write a function that takes the letters of the alphabet and returns their corresponding numeric values. ° (return -1 for non-alphabetic characters)\nExample: 'c' > 3 | 'A' > 1.\n\n\
+$(subject) Write a function that takes the letters of the alphabet and returns their corresponding numeric values. ° (return -1 for non-alphabetic characters)\nExample: ft_index_letter('c'); // 3 | ft_index_letter('A') // 1.\n\n\
 $(prototype) \n'''\nint ft_index_letter(char letter);\n'''\n\n\
 $(allowed_function) None."
 test_index_letter:
@@ -524,6 +525,23 @@ test_sort_int_arr:
 	else \
 		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_sort_int_arr.c$(ansi_default)"; \
 	fi
+
+# Swap Bits
+subject_swap_bits:
+	@echo "\
+$(name_exercise) Swap Bits\n\n\
+$(name_file) ft_swap_bits.c\n\n\
+$(subject) Write a function that takes a byte, swaps its halves (like the example) and returns the result.\nExample:\n\t  1 byte\n\t0100 | 0001\n\t    \ /\n\t    / \\ \n\t0001 | 0100\n\n\
+$(prototype) \n'''\nunsigned char ft_swap_bits(unsigned char octet);\n'''\n\n\
+$(allowed_function) None."
+test_swap_bits:
+	@if [ -e ../../ft_swap_bits.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)swap_bits$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)swap_bits.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_swap_bits.c$(ansi_default)"; \
+	fi
+
 # End Exercises
 
 ## End Targets

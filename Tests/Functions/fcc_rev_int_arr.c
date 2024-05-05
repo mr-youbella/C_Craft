@@ -29,11 +29,15 @@ void print_array_nolen(int *arr, unsigned int len)
     printf("]");
 }
 
-void check(int *arr, unsigned int len, int *result, int i, int *oldarr)
+int check(int *arr, unsigned int len, int *result, int i, int *oldarr)
 {
+    int pass = 0;
     usleep(200000);
     if (memcmp(ft_rev_int_arr(arr, len), result, len * 4) == 0)
+    {
         printf(split_line_passed, i);
+        pass++;
+    }
     else
     {
         printf(ansi_red"---------------------\n%d - Fault\nTest: ", i);
@@ -44,6 +48,7 @@ void check(int *arr, unsigned int len, int *result, int i, int *oldarr)
         print_array_nolen(ft_rev_int_arr(arr, len), len);
         printf("\n---------------------\n"ansi_default);
     }
+    return (pass);
 }
 
 int main(void)
@@ -63,11 +68,13 @@ int main(void)
     int arr7[2][0] = {{}, {}};
     int arr7old[] = {};
 
-    check(arr1[0], 4, arr1[1], 1, arr1old);
-    check(arr2[0], 4, arr2[1], 2, arr2old);
-    check(arr3[0], 5, arr3[1], 3, arr3old);
-    check(arr4[0], 5, arr4[1], 4, arr4old);
-    check(arr5[0], 6, arr5[1], 5, arr5old);
-    check(arr6[0], 5, arr6[1], 6, arr6old);
-    check(arr7[0], 0, arr7[1], 7, arr7old);
+    int pass1 = check(arr1[0], 4, arr1[1], 1, arr1old);
+    int pass2 = check(arr2[0], 4, arr2[1], 2, arr2old);
+    int pass3 = check(arr3[0], 5, arr3[1], 3, arr3old);
+    int pass4 = check(arr4[0], 5, arr4[1], 4, arr4old);
+    int pass5 = check(arr5[0], 6, arr5[1], 5, arr5old);
+    int pass6 = check(arr6[0], 5, arr6[1], 6, arr6old);
+    int pass7 = check(arr7[0], 0, arr7[1], 7, arr7old);
+    int pass = pass1 + pass2 + pass3 + pass4 + pass5 + pass6 + pass7;
+    pass_or_fail(7, pass, "ft_rev_int_arr.c");
 }
