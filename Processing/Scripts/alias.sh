@@ -1,6 +1,13 @@
 #!/bin/bash
 source "$(dirname "$0")/ansi.sh"
 
+function handle_sigint() {
+    rm -rf C_Craft
+    clear
+    echo "Program has stopped"
+    exit 0
+}
+
 what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
@@ -79,6 +86,8 @@ fi
 if [ "$(pwd)" != "$HOME" ]; then
     cp -r ~/C_Craft C_Craft 2>/dev/null
 fi
+
+trap 'handle_sigint' SIGINT
 
 ## Switch case
 case $1 in
