@@ -139,8 +139,8 @@ case $1 in
     "str_is_numbers")
         (cd C_Craft/Processing && make test_str_is_numbers)
     ;;
-    "bindec")
-        (cd C_Craft/Processing && make test_bindec)
+    "bintdec")
+        (cd C_Craft/Processing && make test_bintdec)
     ;;
     "lower_case")
         (cd C_Craft/Processing && make test_lower_case)
@@ -237,8 +237,8 @@ case $1 in
     "su_str_is_numbers")
         (cd $(dirname "$0")/.. && make subject_str_is_numbers)
     ;;
-    "su_bindec")
-        (cd $(dirname "$0")/.. && make subject_bindec)
+    "su_bintdec")
+        (cd $(dirname "$0")/.. && make subject_bintdec)
     ;;
     "su_lower_case")
         (cd $(dirname "$0")/.. && make subject_lower_case)
