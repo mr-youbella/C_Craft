@@ -1,5 +1,5 @@
 #include "lib_tests.h"
-#include "../../../ft_bindec.c"
+#include "../../../ft_bintdec.c"
 
 int	main(void)
 {
@@ -12,14 +12,14 @@ int	main(void)
     while (i < test)
     {
         usleep(200000);
-        if (ft_bindec(ts[i]) == ts2[i])
+        if (ft_bintdec(ts[i]) == ts2[i])
         {
             printf(split_line_passed, i + 1);
             pass++;
         }
         else 
-            printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\")\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, ts[i], ts2[i], ft_bindec(ts[i]));
+            printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\")\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, ts[i], ts2[i], ft_bintdec(ts[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_bindec.c");
+    pass_or_fail(test, pass, "ft_bintdec.c");
 }
