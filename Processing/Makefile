@@ -175,14 +175,14 @@ test_str_is_numbers:
 	fi
 
 # Binary to decimal
-subject_bindec:
+subject_bintdec:
 	@echo "\
 $(name_exercise) Binary to decimal\n\n\
 $(name_file) ft_bintdec.c\n\n\
 $(subject) Create a function that takes a binary number and returns a decimal number.(if the entry number is more than 8 digit long or contains two digits other than 0 and 1, return -1)\n\n\
 $(prototype) \n'''\nint ft_bintdec(char *bin);\n'''\n\n\
 $(allowed_function) None."
-test_bindec:
+test_bintdec:
 	@if [ -e ../../ft_bintdec.c ]; then \
 		echo "$(ansi_blue)$(ansi_line)bintdec$(ansi_default)\n"; \
 		$(print_cCraft) $(gcc_function)bintdec.c $(execute); \
