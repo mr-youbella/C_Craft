@@ -22,5 +22,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\", \"%s\")\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, s1[i], s2[i], result[i], ft_strcmp(s1[i], s2[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_strcmp.c");
+    pass_or_fail(test, pass, "strcmp", 3);
 }

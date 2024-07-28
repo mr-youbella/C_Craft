@@ -21,5 +21,5 @@ int main(void)
             printf(ansi_red"---------------------\n%d - Fault\nTest: (%d)\nExpected: %s\nbut got: %s\n---------------------\n"ansi_default, i + 1, test[i], result[i], ft_itoa(test[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_itoa.c");
+    pass_or_fail(test, pass, "itoa", 5);
 }

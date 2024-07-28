@@ -15,8 +15,8 @@ ccraft
 ```
 The ccraft command shows you a description of the program and how to use it.
 
-<h3 align="left">If you encounter any problem or encounter any errors in a program or have a suggestion to improve a program, you 
-can contact us through our accounts :</h3>
+<h4 align="left">If you encounter any problem or encounter any errors in a program or have a suggestion to improve a program, you 
+can contact us through our accounts :</h4>
 <p align="left">
 <a href="https://twitter.com/master_youbella" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="X = Master Youbella" height="30" width="40" /></a>
 <a href="https://www.instagram.com/master_youbella" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram = Master Youbella" height="30" width="40" /></a>

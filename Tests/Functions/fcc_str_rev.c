@@ -21,5 +21,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\")\nExpected: \"%s\"\nbut got: \"%s\"\n---------------------\n" ansi_default, i + 1, str[i], result[i], ft_str_rev(str[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_str_rev.c");
+    pass_or_fail(test, pass, "str_rev", 3);
 }

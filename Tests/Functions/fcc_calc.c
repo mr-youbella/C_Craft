@@ -23,5 +23,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\", '%c', \"%s\")\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, nb1[i], op[i], nb2[i], result[i], ft_calc(nb1[i], op[i], nb2[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_calc.c");
+    pass_or_fail(test, pass, "calc", 2);
 }

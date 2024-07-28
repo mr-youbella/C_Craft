@@ -35,5 +35,5 @@ int	main(void)
         }
         i++;
     }
-    pass_or_fail(test_count, pass, "ft_swap_bits.c");
+    pass_or_fail(test_count, pass, "swap_bits", 4);
 }

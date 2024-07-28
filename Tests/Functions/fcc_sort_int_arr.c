@@ -87,5 +87,5 @@ int main(void)
     int pass7 = check(arr7[0], 6, arr7[1], 7, arr7old);
     int pass8 = check(arr8[0], 4, arr8[1], 8, arr8old);
     int pass = pass1 + pass2 + pass3 + pass4 + pass5 + pass6 + pass7 + pass8;
-    pass_or_fail(8, pass, "ft_sort_int_arr.c");
+    pass_or_fail(8, pass, "sort_int_arr", 5);
 }

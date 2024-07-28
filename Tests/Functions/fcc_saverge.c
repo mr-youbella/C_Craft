@@ -24,5 +24,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (%.2f, %.2f, %.2f, %.2f)\nExpected: %.2f\nbut got: %.2f\n---------------------\n" ansi_default, i + 1, mt[i], pc[i], en[i], ph[i], ts[i], ft_saverge(mt[i], pc[i], en[i], ph[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_saverge.c");
+    pass_or_fail(test, pass, "saverge", 2);
 }

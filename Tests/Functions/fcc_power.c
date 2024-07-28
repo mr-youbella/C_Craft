@@ -22,5 +22,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (%d, %d)\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, ts[0][i], ts[1][i], ans[i], ft_power(ts[0][i], ts[1][i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_power.c");
+    pass_or_fail(test, pass, "power", 3);
 }

@@ -50,5 +50,5 @@ int main(void)
     int pass6 = check(arr6, 5, -1256, 6);
     int pass7 = check(arr7, 0, 0, 7);
     int pass = pass1 + pass2 + pass3 + pass4 + pass5 + pass6 + pass7;
-    pass_or_fail(7, pass, "ft_min_num.c");
+    pass_or_fail(7, pass, "min_num", 5);
 }

@@ -40,5 +40,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\", \'%c\')\nExpected: NULL\nbut got: \"%s\"\n---------------------\n" ansi_default, i + 9, str1[i], c1[i], ft_strchr(str1[i], c1[i]));
         i++;
     }
-    pass_or_fail(test + 2, pass, "ft_strchr.c");
+    pass_or_fail(test + 2, pass, "strchr", 4);
 }

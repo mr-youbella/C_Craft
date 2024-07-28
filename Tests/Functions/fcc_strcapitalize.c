@@ -22,5 +22,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\")\nExpected: \"%s\"\nbut got: \"%s\"\n---------------------\n" ansi_default, i + 1, old_str[i], result[i], ft_strcapitalize(str[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_strcapitalize.c");
+    pass_or_fail(test, pass, "strcapitalize", 4);
 }

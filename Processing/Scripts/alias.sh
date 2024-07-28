@@ -2,7 +2,9 @@
 source "$(dirname "$0")/ansi.sh"
 
 function handle_sigint() {
-    rm -rf C_Craft
+    if [ "$(pwd)" != "$HOME" ]; then
+        rm -rf C_Craft 2>/dev/null
+    fi
     clear
     echo "Program has stopped"
     exit 0
@@ -12,10 +14,9 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
-    echo -e "Add exercise (swap_bits)"
+    echo -e "Added "$ansi_blue"ccraft lvl$ansi_default command that shows your level and points collected from exercises"
     echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
-    echo -e "1 - Add tests in calc"
-    echo -e "2 - Edit the name of an exercise (bindec -> bintdec)"
+    echo -e "Add exercise (swap_bits)"
 
 }
 deleted()
@@ -69,6 +70,7 @@ c_craft(){
 "$ansi_blue"ccraft namequ$ansi_default: The ccraft namequ command to start an quiz.
 $ansi_red(Replace nameex and namequ with the name of the exercises/quizzes)$ansi_default
 "$ansi_blue"ccraft testall$ansi_default: The ccraft testall command will test all completed exercises.
+"$ansi_blue"ccraft lvl$ansi_default: Every exercise you do correctly you get points, and the more points you have the higher your level is. You can know your level and how many points you have by using this command.
 "$ansi_blue"ccraft up$ansi_default: The ccraft up command to update the program as any changes or additions are released.
 "$ansi_blue"ccraft wnew$ansi_default: The ccraft wnew command to find out what are the latest modifications and additions that occurred in the program.
 "$ansi_blue"ccraft del$ansi_default: The ccraft del command to deleted the program from your device.
@@ -91,6 +93,10 @@ trap 'handle_sigint' SIGINT
 
 ## Switch case
 case $1 in
+#Level
+    "lvl")
+        bash ~/C_Craft/Tests/Level/lvl.bash
+    ;;
 # Display last Update
     "wnew")
         what_is_new

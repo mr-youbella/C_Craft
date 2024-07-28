@@ -21,5 +21,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (%d)\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, ts[i], ts2[i], ft_factorial(ts[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_factorial.c");
+    pass_or_fail(test, pass, "factorial", 3);
 }

@@ -22,5 +22,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\", \'%c\')\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, str[i], c[i], result[i], ft_char_count(str[i], c[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_char_count.c");
+    pass_or_fail(test, pass, "char_count", 2);
 }

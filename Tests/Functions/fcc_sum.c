@@ -22,5 +22,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (%d, %d)\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, ts[0][i], ts[1][i], ts2[i], ft_sum(ts[0][i], ts[1][i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_sum.c");
+    pass_or_fail(test, pass, "sum", 1);
 }

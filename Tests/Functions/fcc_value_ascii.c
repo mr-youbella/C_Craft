@@ -22,5 +22,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: ('%c')\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, ts[i], ts2[i], ft_value_ascii(ts[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_value_ascii.c");
+    pass_or_fail(test, pass, "value_ascii", 2);
 }

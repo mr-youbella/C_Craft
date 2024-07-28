@@ -40,5 +40,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\", \'%s\')\nExpected: NULL\nbut got: \"%s\"\n---------------------\n" ansi_default, i + 9, str1[i], to_find1[i], ft_strstr(str1[i], to_find1[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_strstr.c");
+    pass_or_fail(test, pass, "strstr", 4);
 }

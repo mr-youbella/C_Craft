@@ -21,5 +21,5 @@ int	main(void)
             printf(ansi_red "--------------------\n%d - Fault\nTest: (%d)\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, test[i], result[i], ft_fibonacci(test[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_fibonacci.c");
+    pass_or_fail(test, pass, "fibonacci", 3);
 }

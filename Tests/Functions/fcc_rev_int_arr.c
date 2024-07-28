@@ -76,5 +76,5 @@ int main(void)
     int pass6 = check(arr6[0], 5, arr6[1], 6, arr6old);
     int pass7 = check(arr7[0], 0, arr7[1], 7, arr7old);
     int pass = pass1 + pass2 + pass3 + pass4 + pass5 + pass6 + pass7;
-    pass_or_fail(7, pass, "ft_rev_int_arr.c");
+    pass_or_fail(7, pass, "rev_int_arr", 4);
 }

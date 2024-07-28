@@ -22,5 +22,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: ('%c')\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, ts[i], ts2[i], ft_index_letter(ts[i]));
         i++;
     }
-    pass_or_fail(test, pass, "ft_index_letter.c");
+    pass_or_fail(test, pass, "index_letter", 2);
 }
