@@ -20,7 +20,7 @@ void pass_or_fail(int test, int pass, char *name, int pn)
         FILE *file = fopen(path, "w");
         fprintf(file, "%d", pn);
         fclose(file);
-        printf("\033[42;1m PASS \033[0m ft_%s.c\n\033[32m+ %d points\033[0m\n", name, pn);
+        printf("\033[42;1m PASS \033[0m ft_%s.c\n\033[32m+%d points\033[0m\n", name, pn);
     }
     else
         printf("\033[41;1m FAIL \033[0m ft_%s.c\n", name);

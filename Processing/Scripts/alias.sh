@@ -14,9 +14,9 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
-    echo -e "Added "$ansi_blue"ccraft lvl$ansi_default command that shows your level and points collected from exercises"
+    echo -e "Add new exercise (memset)"
     echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
-    echo -e "Add exercise (swap_bits)"
+    echo -e "Added "$ansi_blue"ccraft lvl$ansi_default command that shows your level and points collected from exercises"
 
 }
 deleted()
@@ -214,6 +214,9 @@ case $1 in
     "swap_bits")
         (cd C_Craft/Processing && make test_swap_bits)
     ;;
+    "memset")
+        (cd C_Craft/Processing && make test_memset)
+    ;;
 # Test All Exercises
     "testall")
         (cd C_Craft/Processing && make test_all_exercises)
@@ -311,6 +314,9 @@ case $1 in
     ;;
     "su_swap_bits")
         (cd $(dirname "$0")/.. && make subject_swap_bits)
+    ;;
+    "su_memset")
+        (cd $(dirname "$0")/.. && make subject_memset)
     ;;
     *)
         echo -e ""$ansi_red"C_Craft: command not found$ansi_default"

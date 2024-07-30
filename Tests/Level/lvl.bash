@@ -12,7 +12,7 @@ fibonacci=$(cat ~/C_Craft/Tests/Level/fibonacci)
 index_letter=$(cat ~/C_Craft/Tests/Level/index_letter)
 itoa=$(cat ~/C_Craft/Tests/Level/itoa)
 lower_case=$(cat ~/C_Craft/Tests/Level/lower_case)
-lower_case=$(cat ~/C_Craft/Tests/Level/lower_case)
+max_num=$(cat ~/C_Craft/Tests/Level/max_num)
 min_num=$(cat ~/C_Craft/Tests/Level/min_num)
 no_space=$(cat ~/C_Craft/Tests/Level/no_space)
 power=$(cat ~/C_Craft/Tests/Level/power)
@@ -31,8 +31,11 @@ sum=$(cat ~/C_Craft/Tests/Level/sum)
 swap_bits=$(cat ~/C_Craft/Tests/Level/swap_bits)
 upper_case=$(cat ~/C_Craft/Tests/Level/upper_case)
 value_ascii=$(cat ~/C_Craft/Tests/Level/value_ascii)
+memset=$(cat ~/C_Craft/Tests/Level/memset)
 
-point=$((atoi + bintdec + calc + char_count + check_email + digit + even + factorial + fibonacci + index_letter + itoa + lower_case + max_num + min_num + no_space + power + rev_int_arr + sort_int_arr + saverge + str_is_alpha + str_is_numbers + str_rev + strcapitalize +  strchr + strcmp + strlen + strstr + sum + swap_bits + upper_case + value_ascii))
+point=$((atoi + bintdec + calc + char_count + check_email + digit + even + factorial + fibonacci + index_letter + itoa + lower_case + max_num + min_num + no_space + power + rev_int_arr + sort_int_arr + saverge + str_is_alpha + str_is_numbers + str_rev + strcapitalize +  strchr + strcmp + strlen + strstr + sum + swap_bits + upper_case + value_ascii + memset))
+name_exercises=(sum digit strlen saverge even power str_is_alpha str_is_numbers bintdec upper_case lower_case atoi value_ascii index_letter \
+ factorial strcmp char_count no_space calc str_rev strcapitalize fibonacci strstr itoa strchr check_email max_num min_num rev_int_arr sort_int_arr swap_bits memset) #32 Exercises
 
 if [[ $point -ge 0 && $point -le 10 ]]; then
 	lvl="Level 1"
@@ -64,8 +67,9 @@ fi
 
 
 i=0
-echo -en $ansi_red
-echo -n "[Your level                "
+echo -en "$ansi_red"
+echo -e "╔══════════════════════════════════════════════════════════════════════════╗"
+echo -n "  Your level                "
 echo -en $ansi_blue
 if [[ $point -ge 0 && $point -le 10 ]]; then
 	i=0
@@ -160,8 +164,21 @@ elif [[ $point -ge 231 && $point -le 250 ]]; then
 	done	
 fi
 echo -en $ansi_red
-echo -e "                is $lvl]\n"
+echo -e "                is $lvl"
+echo -e "╚══════════════════════════════════════════════════════════════════════════╝"
 echo -en $ansi_green
+echo "                           ║You have $point points║"
+echo "                         ════════════════════════"
+echo -en "$ansi_default\n"
 
-echo "                           You have $point points"
-echo -en $ansi_default
+i=0
+while [[ i -lt 32 ]]; do
+	if [ $(cat ~/C_Craft/Tests/Level/${name_exercises[i]}) > 0 ]; then
+		echo -ne "${name_exercises[i]} -> $ansi_green"
+		cat ~/C_Craft/Tests/Level/${name_exercises[i]}
+		echo -e " points$ansi_default"
+	fi
+	((i++))
+done
+
+rm 0
