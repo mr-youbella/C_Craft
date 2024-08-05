@@ -21,5 +21,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\")\nExpected: %d\nbut got: %d\n---------------------\n" ansi_default, i + 1, ts[i], ts2[i], ft_strlen(ts[i]));
         i++;
     }
-    pass_or_fail(test, pass, "strlen" 3);
+    pass_or_fail(test, pass, "strlen", 3);
 }

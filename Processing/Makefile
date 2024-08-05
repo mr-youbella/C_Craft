@@ -225,7 +225,7 @@ $(name_file) ft_lower_case.c\n\n\
 $(subject) write a function that takes a string and returns all characters to lowercase.\n\n\
 $(prototype) \n'''\nchar *ft_lower_case(char *str);\n'''\n\n\
 $(allowed_function) None.\n\n\
-$(plus_points) +3 points"
+$(plus_points) +2 points"
 test_lower_case:
 	@if [ -e ../../ft_lower_case.c ]; then \
 		echo "$(ansi_blue)$(ansi_line)lower_case$(ansi_default)\n"; \
@@ -358,7 +358,7 @@ subject_calc:
 	@echo "\
 $(name_exercise) Calculator\n\n\
 $(name_file) ft_calc.c\n\n\
-$(subject) Write a function that takes two strings and one character. The string are representations of integers. The char is an arithmetic operator chosen from: (+ - * / %). The function must return the result of the required arithmetic operation.(if the op is not equal math operator, return 0)\nExample: calc(\"13\", '+', \"37\")\\ 50\n\n\
+$(subject) Write a function that takes two strings and one character. The string are representations of integers. The char is an arithmetic operator chosen from: (+ - * / %). The function must return the result of the required arithmetic operation.(if the op is not equal math operator, return 0)\nExample: calc(\"13\", '+', \"37\") \\ 50\n\n\
 $(prototype) \n'''\nint ft_calc(char *nb1, char op, char *nb2);\n'''\n\n\
 $(allowed_function) None.\n\n\
 $(plus_points) +2 points"

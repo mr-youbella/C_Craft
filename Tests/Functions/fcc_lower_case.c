@@ -23,5 +23,5 @@ int	main(void)
             printf(ansi_red "---------------------\n%d - Fault\nTest: (\"%s\")\nExpected: \"%s\"\nbut got: \"%s\"\n---------------------\n" ansi_default, i + 1, tsc[i], ts2[i], ft_lower_case(ts[i]));
         i++;
     }
-    pass_or_fail(test, pass, "lower_case", 3);
+    pass_or_fail(test, pass, "lower_case", 2);
 }

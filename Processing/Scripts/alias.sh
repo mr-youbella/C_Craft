@@ -35,12 +35,17 @@ deleted()
 }
 update()
 {
-    (cd ~/C_Craft && git pull)
-    source ~/.bashrc 2>/dev/null
-    source ~/.zshrc 2>/dev/null
-    clear
-    echo -e "\033[32mUpdate successfully, write \033[34mccraft wnew\033[32m to know what's new in the latest update\033[0m".
-    exec bash
+    echo -e "\033[34mWait...\033[0m"
+    if curl -s https://www.google.com > /dev/null; then
+        (cd ~/C_Craft && git pull)
+        source ~/.bashrc 2>/dev/null
+        source ~/.zshrc 2>/dev/null
+        clear
+        echo -e "\033[32mUpdate successfully, write \033[34mccraft wnew\033[32m to know what's new in the latest update\033[0m".
+        exec bash
+    else
+        echo -e "\033[31mSorry, you are not connected to the internet. Please check your internet connection.\033[0m"
+    fi
 }
 
 write_name_user(){
