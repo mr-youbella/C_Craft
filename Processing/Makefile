@@ -21,6 +21,7 @@ echo "$(ansi_sred)\nCANNOT COMPILER.$(ansi_red)$(split_line)There seems to be an
 # Name Exercises/Quizzes
 names_exercises_Availble = "\n$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bintdec\nupper_case - lower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count\nno_space - calc - str_rev - strcapitalize - fibonacci - strstr - itoa - strchr - check_email\nmax_num - min_num - rev_int_arr - sort_int_arr - swap_bits - memset\n$(ansi_pink)$(ansi_bold)                                  -> 32 Exercises <-                                             $(ansi_default)" 
 names_quizzes_Availble = "$(ansi_blue)quiz1$(ansi_default)"
+names_exams_Availble = "$(ansi_blue)exam00$(ansi_default)"
 
 # Subject
 name_exercise = $(ansi_bold)📝 Exercise name:$(ansi_default)
@@ -43,7 +44,8 @@ ex:
 	@echo Exercise: $(names_exercises_Availble)
 qu:
 	@echo Quizzes: $(names_quizzes_Availble)
-
+exam:
+	@echo Exams: $(names_exams_Availble)
 
 # Test_All_Exercises
 

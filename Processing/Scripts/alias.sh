@@ -14,7 +14,7 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
-    echo -e "Add new exercise (memset)"
+    echo -e "Add the first exam, and two commands (use "$ansi_blue"ccraft$ansi_default)"
     echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
     echo -e "Added "$ansi_blue"ccraft lvl$ansi_default command that shows your level and points collected from exercises"
 
@@ -36,6 +36,7 @@ deleted()
 update()
 {
     echo -e "\033[34mWait...\033[0m"
+    sleep 0.5
     if curl -s https://www.google.com > /dev/null; then
         (cd ~/C_Craft && git pull)
         source ~/.bashrc 2>/dev/null
@@ -70,10 +71,12 @@ c_craft(){
     echo -e ""$ansi_blue"ccraft$ansi_default: The ccraft command shows you a description of the program and how to use it.
 "$ansi_blue"ccraft ex$ansi_default: The ccraft ex command displays all the exercises available in the program that you can work on.
 "$ansi_blue"ccraft qu$ansi_default: The ccraft qu command displays all the quizzes available in the program.
+"$ansi_blue"ccraft exam$ansi_default: The ccraft exam command displays all the exams available in the program.
+"$ansi_blue"ccraft examNUM$ansi_default: The ccraft examNUM command start your exam to work on it.
 "$ansi_blue"ccraft su_nameex$ansi_default: The ccraft su_nameex command displays the exercise subject and everything you need to complete the exercise.
 "$ansi_blue"ccraft nameex$ansi_default: The ccraft nameex command to test an exercise you have completed.
 "$ansi_blue"ccraft namequ$ansi_default: The ccraft namequ command to start an quiz.
-$ansi_red(Replace nameex and namequ with the name of the exercises/quizzes)$ansi_default
+$ansi_red(Replace nameex and namequ and examNUM with the name of the exercises/quizzes/exams)$ansi_default
 "$ansi_blue"ccraft testall$ansi_default: The ccraft testall command will test all completed exercises.
 "$ansi_blue"ccraft lvl$ansi_default: Every exercise you do correctly you get points, and the more points you have the higher your level is. You can know your level and how many points you have by using this command.
 "$ansi_blue"ccraft up$ansi_default: The ccraft up command to update the program as any changes or additions are released.
@@ -81,7 +84,6 @@ $ansi_red(Replace nameex and namequ with the name of the exercises/quizzes)$ansi
 "$ansi_blue"ccraft del$ansi_default: The ccraft del command to deleted the program from your device.
 \n\n"$ansi_yellow"If you encounter any problem or encounter any errors in a program or have a suggestion to improve a program, you can contact us through our accounts available on GitHub: "$ansi_line"https://github.com/mr-youbella$ansi_default"
 }
-
 
 # Start message
 if [ -z $1 ]; then
@@ -114,12 +116,15 @@ case $1 in
     "del")
         deleted
     ;;
-# Display Exercises/Quizzes
+# Display Exercises/Quizzes/Exams
     "ex")
         (cd $(dirname "$0")/.. && make ex)
     ;;
     "qu")
         (cd $(dirname "$0")/.. && make qu)
+    ;;
+    "exam")
+        (cd $(dirname "$0")/.. && make exam)
     ;;
 # Quizzes
     "quiz1")
@@ -322,6 +327,10 @@ case $1 in
     ;;
     "su_memset")
         (cd $(dirname "$0")/.. && make subject_memset)
+    ;;
+#Exams
+    "exam00")
+        (cd C_Craft/Tests/Exams/exam00 && bash exam00.sh)
     ;;
     *)
         echo -e ""$ansi_red"C_Craft: command not found$ansi_default"
