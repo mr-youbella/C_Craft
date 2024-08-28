@@ -38,137 +38,140 @@ name_exercises=(sum digit strlen saverge even power str_is_alpha str_is_numbers 
  factorial strcmp char_count no_space calc str_rev strcapitalize fibonacci strstr itoa strchr check_email max_num min_num rev_int_arr sort_int_arr swap_bits memset) #32 Exercises
 
 if [[ $point -ge 0 && $point -le 10 ]]; then
-	lvl="Level 1"
+	lvl="LVL 1"
 elif [[ $point -ge 11 && $point -le 30 ]]; then
-	lvl="Level 2"
+	lvl="LVL 2"
 elif [[ $point -ge 31 && $point -le 50 ]]; then
-	lvl="Level 3"
+	lvl="LVL 3"
 elif [[ $point -ge 51 && $point -le 70 ]]; then
-	lvl="Level 4"
+	lvl="LVL 4"
 elif [[ $point -ge 71 && $point -le 90 ]]; then
-	lvl="Level 5"
+	lvl="LVL 5"
 elif [[ $point -ge 91 && $point -le 110 ]]; then
-	lvl="Level 6"
+	lvl="LVL 6"
 elif [[ $point -ge 111 && $point -le 130 ]]; then
-	lvl="Level 7"
+	lvl="LVL 7"
 elif [[ $point -ge 131 && $point -le 150 ]]; then
-	lvl="Level 8"
+	lvl="LVL 8"
 elif [[ $point -ge 151 && $point -le 170 ]]; then
-	lvl="Level 9"
+	lvl="LVL 9"
 elif [[ $point -ge 171 && $point -le 190 ]]; then
-	lvl="Level 10"
+	lvl="LVL 10"
 elif [[ $point -ge 191 && $point -le 210 ]]; then
-	lvl="Level 11"
+	lvl="LVL 11"
 elif [[ $point -ge 211 && $point -le 230 ]]; then
-	lvl="Level 12"
+	lvl="LVL 12"
 elif [[ $point -ge 231 && $point -le 250 ]]; then
-	lvl="Level 13"	
+	lvl="LVL 13"	
 fi
 
 
 i=0
 echo -en "$ansi_red"
 echo -e "╔══════════════════════════════════════════════════════════════════════════╗"
-echo -n "  Your level                "
+echo -n "       "
 echo -en $ansi_blue
 if [[ $point -ge 0 && $point -le 10 ]]; then
 	i=0
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 11 && $point -le 30 ]]; then
 	i=11
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 31 && $point -le 50 ]]; then
 	i=31
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 51 && $point -le 70 ]]; then
 	i=51
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 71 && $point -le 90 ]]; then
 	i=71
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 91 && $point -le 110 ]]; then
 	i=91
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 111 && $point -le 130 ]]; then
 	i=111
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 131 && $point -le 150 ]]; then
 	i=131
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 151 && $point -le 170 ]]; then
 	i=151
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 171 && $point -le 190 ]]; then
 	i=171
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 191 && $point -le 210 ]]; then
 	i=191
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 211 && $point -le 230 ]]; then
 	i=211
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done
 elif [[ $point -ge 231 && $point -le 250 ]]; then
 	i=231
 	while [ $i -le $point ]; do
 		sleep 0.1
-		echo -n "#"
+		echo -n "###"
 		((i++))
 	done	
 fi
 echo -en $ansi_red
-echo -e "                is $lvl"
+echo -e ""
 echo -e "╚══════════════════════════════════════════════════════════════════════════╝"
+echo -en $ansi_blue
+echo "                           ║You level is $lvl║"
 echo -en $ansi_green
+echo "                         ══════════════════════════"
 echo "                           ║You have $point points║"
-echo "                         ════════════════════════"
+echo "                         ══════════════════════════"
 echo -en "$ansi_default\n"
 
 i=0
