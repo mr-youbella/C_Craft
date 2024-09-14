@@ -32,10 +32,11 @@ swap_bits=$(cat ~/C_Craft/Tests/Level/swap_bits)
 upper_case=$(cat ~/C_Craft/Tests/Level/upper_case)
 value_ascii=$(cat ~/C_Craft/Tests/Level/value_ascii)
 memset=$(cat ~/C_Craft/Tests/Level/memset)
+striteri=$(cat ~/C_Craft/Tests/Level/striteri)
 
-point=$((atoi + bintdec + calc + char_count + check_email + digit + even + factorial + fibonacci + index_letter + itoa + lower_case + max_num + min_num + no_space + power + rev_int_arr + sort_int_arr + saverge + str_is_alpha + str_is_numbers + str_rev + strcapitalize +  strchr + strcmp + strlen + strstr + sum + swap_bits + upper_case + value_ascii + memset))
+point=$((atoi + bintdec + calc + char_count + check_email + digit + even + factorial + fibonacci + index_letter + itoa + lower_case + max_num + min_num + no_space + power + rev_int_arr + sort_int_arr + saverge + str_is_alpha + str_is_numbers + str_rev + strcapitalize +  strchr + strcmp + strlen + strstr + sum + swap_bits + upper_case + value_ascii + memset + striteri))
 name_exercises=(sum digit strlen saverge even power str_is_alpha str_is_numbers bintdec upper_case lower_case atoi value_ascii index_letter \
- factorial strcmp char_count no_space calc str_rev strcapitalize fibonacci strstr itoa strchr check_email max_num min_num rev_int_arr sort_int_arr swap_bits memset) #32 Exercises
+ factorial strcmp char_count no_space calc str_rev strcapitalize fibonacci strstr itoa strchr check_email max_num min_num rev_int_arr sort_int_arr swap_bits memset striteri) #33 Exercises
 
 if [[ $point -ge 0 && $point -le 10 ]]; then
 	lvl="LVL 1"
@@ -175,7 +176,7 @@ echo "                         ════════════════�
 echo -en "$ansi_default\n"
 
 i=0
-while [[ i -lt 32 ]]; do
+while [[ i -lt 33 ]]; do
 	if [ $(cat ~/C_Craft/Tests/Level/${name_exercises[i]}) > 0 ]; then
 		echo -ne "${name_exercises[i]} -> $ansi_green"
 		cat ~/C_Craft/Tests/Level/${name_exercises[i]}

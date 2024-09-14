@@ -14,12 +14,11 @@ split_line = \n-----------------------------------------------------------------
 # Compiler and Execute ans Scripts
 print_cCraft = bash Scripts/print_cCraft.sh &&
 gcc_function = gcc -Wall -Wextra -Werror ../Tests/Functions/fcc_
-gcc_program = gcc -Wall -Wextra -Werror ../Tests/Functions/pcc_
-execute = -o fcc && ./fcc && rm -f fcc || \
+execute = 2> /dev/null -o fcc && ./fcc && rm -f fcc || \
 echo "$(ansi_sred)\nCANNOT COMPILER.$(ansi_red)$(split_line)There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.\n$(ansi_default)"
 
 # Name Exercises/Quizzes
-names_exercises_Availble = "\n$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bintdec\nupper_case - lower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count\nno_space - calc - str_rev - strcapitalize - fibonacci - strstr - itoa - strchr - check_email\nmax_num - min_num - rev_int_arr - sort_int_arr - swap_bits - memset\n$(ansi_pink)$(ansi_bold)                                  -> 32 Exercises <-                                             $(ansi_default)" 
+names_exercises_Availble = "\n$(ansi_blue)sum - digit - strlen - saverge - even - power - str_is_alpha - str_is_numbers - bintdec\nupper_case - lower_case - atoi - value_ascii - index_letter - factorial - strcmp - char_count\nno_space - calc - str_rev - strcapitalize - fibonacci - strstr - itoa - strchr - check_email\nmax_num - min_num - rev_int_arr - sort_int_arr - swap_bits - memset - striteri\n$(ansi_pink)$(ansi_bold)                                  -> 33 Exercises <-                                             $(ansi_default)" 
 names_quizzes_Availble = "$(ansi_blue)quiz1$(ansi_default)"
 names_exams_Availble = "$(ansi_blue)exam00$(ansi_default)"
 
@@ -582,7 +581,7 @@ subject_memset:
 $(name_exercise) Memorey Set\n\n\
 $(name_file) ft_memset.c\n\n\
 $(subject) Reproduce the behavior of the function memset.\n\n\
-$(prototype) \n'''\nvoid *ft_memset(void *b, int c, size_t len)\n'''\n\n\
+$(prototype) \n'''\nvoid *ft_memset(void *b, int c, size_t len);\n'''\n\n\
 $(allowed_function) None.\n\n\
 $(plus_points) +4 points"
 test_memset:
@@ -593,6 +592,22 @@ test_memset:
 		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_memset.c$(ansi_default)"; \
 	fi
 
+# String Iterate
+subject_striteri:
+	@echo "\
+$(name_exercise) String Iterate\n\n\
+$(name_file) ft_striteri.c\n\n\
+$(subject) Applies the function f to each character of the string passed as argument, and passing its index as first argument. Each character is passed by address to f to be modified if necessary.\n\n\
+$(prototype) \n'''\nvoid ft_striteri(char *s, void (*f)(unsigned int, char*));\n'''\n\n\
+$(allowed_function) None.\n\n\
+$(plus_points) +6 points"
+test_striteri:
+	@if [ -e ../../ft_striteri.c ]; then \
+		echo "$(ansi_blue)$(ansi_line)striteri$(ansi_default)\n"; \
+		$(print_cCraft) $(gcc_function)striteri.c $(execute); \
+	else \
+		echo "$(ansi_red)Verify that a file named $(ansi_blue)ft_striteri.c$(ansi_default)"; \
+	fi
 # End Exercises
 
 ## End Targets

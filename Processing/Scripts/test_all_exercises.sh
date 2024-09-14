@@ -2,7 +2,7 @@
 source $(dirname "$0")/ansi.sh
 
 name_exercises=(sum digit strlen saverge even power str_is_alpha str_is_numbers bintdec upper_case lower_case atoi value_ascii index_letter \
- factorial strcmp char_count no_space calc str_rev strcapitalize fibonacci strstr itoa strchr check_email max_num min_num rev_int_arr sort_int_arr swap_bits memset) #32 Exercises
+ factorial strcmp char_count no_space calc str_rev strcapitalize fibonacci strstr itoa strchr check_email max_num min_num rev_int_arr sort_int_arr swap_bits memset striteri) #33 Exercises
 spin=("⠷" "⠃" "⠇" "⠧" "⠷" "⠿" "⠧" "⠇" "⠃")
 i=0
 check_ex=0
@@ -31,11 +31,11 @@ echo -e "                        ╚══════════════�
 
 loading 20
 
-while [ $i -lt 32 ]; do
+while [ $i -lt 33 ]; do
     if [ -e ../../ft_${name_exercises[$i]}.c ]; then 
         echo; echo -e ""$ansi_blue$ansi_bold$ansi_line"Testing ${name_exercises[$i]}$ansi_default"; echo
         echo -ne $ansi_yellow ; loading 10 ; echo -ne $ansi_default ; echo
-        gcc -Wall -Wextra -Werror $(dirname "$0")/../../Tests/Functions/fcc_${name_exercises[$i]}.c -o fcc && \
+        gcc -Wall -Wextra -Werror $(dirname "$0")/../../Tests/Functions/fcc_${name_exercises[$i]}.c 2> /dev/null -o fcc && \
         ./fcc && \
         rm fcc || \
         echo -e ""$ansi_sred"\n\nCANNOT COMPILER.\n"$ansi_red"There seems to be an error: Please check the exercise file in terms of Syntax and Prototype and verify that the main function does not exist in the exercise file.$ansi_default"

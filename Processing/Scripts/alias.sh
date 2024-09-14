@@ -14,9 +14,10 @@ what_is_new(){
     write_name_user
     echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
-    echo -e "Add the first exam, and two commands (use "$ansi_blue"ccraft$ansi_default)"
+    echo -e "Add new exercise ("$ansi_blue"striteri$ansi_default)"
     echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
-    echo -e "Added "$ansi_blue"ccraft lvl$ansi_default command that shows your level and points collected from exercises"
+    echo -e "Add the first exam, and two commands (use "$ansi_blue"ccraft$ansi_default)"
+
 
 }
 deleted()
@@ -38,12 +39,15 @@ update()
     echo -e "\033[34mWait...\033[0m"
     sleep 0.5
     if curl -s https://www.google.com > /dev/null; then
-        (cd ~/C_Craft && git pull)
-        source ~/.bashrc 2>/dev/null
-        source ~/.zshrc 2>/dev/null
-        clear
-        echo -e "\033[32mUpdate successfully, write \033[34mccraft wnew\033[32m to know what's new in the latest update\033[0m".
-        exec bash
+        if [[ $(cd ~/C_Craft && git pull) != "Already up to date." ]]; then
+            source ~/.bashrc 2>/dev/null
+            source ~/.zshrc 2>/dev/null
+            clear
+            echo -e "\033[32mUpdate successfully, write \033[34mccraft wnew\033[32m to know what's new in the latest update\033[0m".
+            exec bash
+        else
+            echo -e "\033[34mYou have the latest update.\033[0m"
+        fi
     else
         echo -e "\033[31mSorry, you are not connected to the internet. Please check your internet connection.\033[0m"
     fi
@@ -227,6 +231,9 @@ case $1 in
     "memset")
         (cd C_Craft/Processing && make test_memset)
     ;;
+    "striteri")
+        (cd C_Craft/Processing && make test_striteri)
+    ;;
 # Test All Exercises
     "testall")
         (cd C_Craft/Processing && make test_all_exercises)
@@ -327,6 +334,9 @@ case $1 in
     ;;
     "su_memset")
         (cd $(dirname "$0")/.. && make subject_memset)
+    ;;
+    "su_striteri")
+        (cd $(dirname "$0")/.. && make subject_striteri)
     ;;
 #Exams
     "exam00")
