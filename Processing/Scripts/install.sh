@@ -1,5 +1,6 @@
 #!/bin/shell
 echo -e "\033[34mPlease wait, Program is loading...\033[0m"
+sleep 1
 if [[ -e ~/C_Craft ]]; then
 	rm -rf ~/C_Craft
 fi
