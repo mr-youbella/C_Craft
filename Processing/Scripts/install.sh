@@ -1,5 +1,8 @@
 #!/bin/shell
-echo -e "\033[32mPlease wait, Program is loading...\033[0m"
+echo -e "\034[32mPlease wait, Program is loading...\033[0m"
+if [[ -e ~/C_Craft ]]; then
+	rm -rf ~/C_Craft
+fi
 (cd ~ && git clone https://github.com/mr-youbella/C_Craft > /dev/null 2>&1)
 sudo apt-get install whiptail || sudo yum install newt || sudo dnf install newt || brew install newt || pkg install whiptail
 sudo apt-get install make || sudo yum install make || sudo dnf install make || pkg install make
