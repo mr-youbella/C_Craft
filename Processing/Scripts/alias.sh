@@ -12,11 +12,10 @@ function handle_sigint() {
 
 what_is_new(){
     write_name_user
-    echo -e "Welcome, $ansi_green$user$ansi_default, to the "$ansi_green"C Craft$ansi_default program."; echo
     echo -e ""$ansi_yellow"What's new in the latest update!?$ansi_default"
-    echo -e "Add new exercise ("$ansi_blue"striteri$ansi_default)"
+    echo -e "Add new command ${ansi_blue}status$ansi_default (use ${ansi_blue}ccraft$ansi_default for more info)"
     echo -e ""$ansi_pink"What's new in the penultimate update!?$ansi_default"
-    echo -e "Add the first exam, and two commands (use "$ansi_blue"ccraft$ansi_default)"
+    echo -e "Add new exercise ("$ansi_blue"striteri$ansi_default)"
 
 
 }
@@ -64,7 +63,7 @@ write_name_user(){
         sleep 0.1
         ((i++))
     done
-    echo; echo -e $ansi_default; echo
+    echo -e $ansi_default; echo
 }
 
 c_craft(){
@@ -81,6 +80,7 @@ c_craft(){
 "$ansi_blue"ccraft nameex$ansi_default: The ccraft nameex command to test an exercise you have completed.
 "$ansi_blue"ccraft namequ$ansi_default: The ccraft namequ command to start an quiz.
 $ansi_red(Replace nameex and namequ and examNUM with the name of the exercises/quizzes/exams)$ansi_default
+"$ansi_blue"ccraft status$ansi_default: The ccraft status command will show you the exercises you have successfully completed.
 "$ansi_blue"ccraft testall$ansi_default: The ccraft testall command will test all completed exercises.
 "$ansi_blue"ccraft lvl$ansi_default: Every exercise you do correctly you get points, and the more points you have the higher your level is. You can know your level and how many points you have by using this command.
 "$ansi_blue"ccraft up$ansi_default: The ccraft up command to update the program as any changes or additions are released.
@@ -104,6 +104,10 @@ trap 'handle_sigint' SIGINT
 
 ## Switch case
 case $1 in
+#Status
+    "status")
+        bash ~/C_Craft/Processing/Scripts/status.sh
+    ;;
 #Level
     "lvl")
         bash ~/C_Craft/Tests/Level/lvl.bash

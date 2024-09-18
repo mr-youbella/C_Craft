@@ -185,4 +185,4 @@ while [[ i -lt 33 ]]; do
 	((i++))
 done
 
-rm 0
+rm 0 2> /dev/null
